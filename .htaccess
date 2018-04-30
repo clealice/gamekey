@@ -1,0 +1,9 @@
+Options -Indexes
+ErrorDocument 403 "<h1>Not Found</h1>The requested URL was not found on this server."
+ErrorDocument 404 "<h1>Not Found</h1>The requested URL was not found on this server."
+
+RewriteEngine on
+RewriteRule ^(assets)($|/) - [L]
+RewriteRule ^([A-Za-z0-9]+)/([A-Za-z0-9]+)/(.*)  index.php?controller=$1&page=$2  [L]
+RewriteRule ^([A-Za-z0-9]+)/([A-Za-z0-9]+)/  index.php?controller=$1&page=$2  [L]
+RewriteRule ^([A-Za-z0-9]+)/  index.php?controller=$1  [L]
