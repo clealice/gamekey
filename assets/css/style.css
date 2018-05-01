@@ -228,6 +228,36 @@ section a::before {
     background: url("../images/Games-Banner.png");
     padding: 15px;
 }
+.error_404 {
+    font-family: 'Montserrat', sans-serif;
+}
+.error_404 p {
+    font-size: 14px !important;
+}
+.error_404 p a {
+    color: #e76049;
+}
+.error_404 p a:hover {
+    text-decoration: underline;
+}
+.section_404 {
+    display: block;
+    width: 1280px;
+    margin: 150px auto;
+    border-bottom: 2px solid #e76049;
+    margin-bottom: 20px;
+    font-family: 'Anton', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color:white;
+    text-shadow: 1px 2px 2px black;
+    text-align: center;
+    text-transform: uppercase;
+    background: url("../images/banner_404.jpg") 50% 20%;
+    padding: 15px;
+
+}
+
 
 #static {
     font-family: 'Montserrat', sans-serif;
@@ -257,9 +287,30 @@ section a::before {
 #categories .form-group {
     float: left;
 }
-pre {
-    background-color: rebeccapurple;
-}
 #loader {
     text-align: center;
+}
+section#produit {
+    font-family: 'Montserrat', sans-serif;;
+}
+section#produit .categories div:nth-child(odd) {
+    background-color: #2eb398;
+}
+section#produit .categories div:nth-child(even) {
+    background-color: #e76049;
+}
+section#produit .category {
+    border-radius: 10px;
+    float: right;
+    padding: 10px;
+    margin-right: 5px;
+    text-transform: uppercase;
+    /*color:white;*/
+    font-weight: bold;
+    font-size: 12px;
+}
+section#produit img {
+    width: 200px;
+    padding-right: 20px;
+    float: left;
 }

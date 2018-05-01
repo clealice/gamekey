@@ -16,7 +16,7 @@ $les_jeux = $jeux->chargerData($_GET['lastid']);
             echo
             "
             <article id=\"".$jeu->reference_jeu."\">
-                <a href=\"#\">
+        <a href='".$config['url_site']."product/view/".$jeu->reference_jeu."'>
                     <img src=\"".$config['url_site']."assets/images/products/".$jeu->url_image."\" alt=\"\">
                     <div class=\"hover$i\"></div>
                     <h3>".$jeu->nom_produit."</h3>

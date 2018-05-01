@@ -17,20 +17,39 @@ class product extends view{
             else
                 $this->error(); // Sinon on affiche une error 404!
         else { // Aucun param donc chargement de la page d'accueil
-            $this->show('template/header');
-            $this->show('product/home');
-            $this->show('template/footer');
+
+            $this->load("jeux"); // chargement du model
+            $data = $this->model->chargerAll();
+            $this->redirect_url();
         }
     }
 
     public function view() {
         if(isset($_GET['getter'])) {
+            if($_GET['getter'] == '') // Le paramètre est null
+                $this->error();
+            else {
+                $param = explode("/", $_GET['getter']); // On split le paramètre
+                if($param[0] != "null") { // Le paramètre est null
+                    if(is_numeric($param[0])) {
+                        $this->load("jeux");
+                        $data['jeu'] = $this->model->getJeu($param[0]);
+                        if($data['jeu'] != null){
+                            $data['categories'] = $this->model->getCategories($param[0]);
+                            $data['platformes'] = $this->model->getPlatform($param[0]);
+                            $this->show("template/header");
+                            $this->show("product/home", $data);
+                            $this->show("template/footer");
 
-        } else {
+                        } else
+                            $this->error();
+                    } else
+                        $this->error();
+                } else
+                    $this->error();
+            }
 
-        }
-        $this->show('template/header');
-        $this->show('product/home');
-        $this->show('template/footer');
+        } else
+            $this->error();
     }
 }
