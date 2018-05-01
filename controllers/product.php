@@ -8,7 +8,7 @@
 
 require_once './class/view.class.php';
 
-class category extends view{
+class product extends view{
     public function __construct($param)
     {
         if($param != null) // si le paramètre est différent de null
@@ -18,8 +18,19 @@ class category extends view{
                 $this->error(); // Sinon on affiche une error 404!
         else { // Aucun param donc chargement de la page d'accueil
             $this->show('template/header');
-            $this->show('category/home');
+            $this->show('product/home');
             $this->show('template/footer');
         }
+    }
+
+    public function view() {
+        if(isset($_GET['getter'])) {
+
+        } else {
+
+        }
+        $this->show('template/header');
+        $this->show('product/home');
+        $this->show('template/footer');
     }
 }
