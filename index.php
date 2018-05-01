@@ -2,6 +2,11 @@
 // Indique le point de démarrage de l'application
 require_once './config/config.php';
 
+require_once './class/autoloader.class.php';
+Autoloader::register();
+
+$con = new Base();
+
 
 if(isset($_GET['controller'])){ // vérifie que l'utilisateur est sur une page
     $page = $_GET['controller'];

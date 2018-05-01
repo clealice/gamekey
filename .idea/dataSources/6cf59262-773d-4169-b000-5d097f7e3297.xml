@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="GameKey.db">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="Administrateur"/>
+    <table id="7" parent="2" name="Categorie"/>
+    <table id="8" parent="2" name="Cle"/>
+    <table id="9" parent="2" name="Client"/>
+    <table id="10" parent="2" name="Commande"/>
+    <table id="11" parent="2" name="Compte"/>
+    <table id="12" parent="2" name="Concerne_jeu_categorie"/>
+    <table id="13" parent="2" name="Concerne_jeu_commande"/>
+    <table id="14" parent="2" name="Concerne_jeu_platforme"/>
+    <table id="15" parent="2" name="Jeu"/>
+    <table id="16" parent="2" name="News"/>
+    <table id="17" parent="2" name="Platforme"/>
+    <table id="18" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <column id="19" parent="6" name="id_admin">
+      <Position>1</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="20" parent="6" name="last_ip">
+      <Position>2</Position>
+      <DataType>VARCHAR(25)|0</DataType>
+    </column>
+    <index id="21" parent="6" name="sqlite_autoindex_Administrateur_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_admin</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="22" parent="6">
+      <ColNames>id_admin</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Administrateur_1</UnderlyingIndexName>
+    </key>
+    <key id="23" parent="6">
+      <ColNames>id_admin</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Administrateur_1</UnderlyingIndexName>
+    </key>
+    <column id="24" parent="7" name="nom_categorie">
+      <Position>1</Position>
+      <DataType>VARCHAR(25)|0</DataType>
+    </column>
+    <index id="25" parent="7" name="sqlite_autoindex_Categorie_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>nom_categorie</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="26" parent="7">
+      <ColNames>nom_categorie</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Categorie_1</UnderlyingIndexName>
+    </key>
+    <key id="27" parent="7">
+      <ColNames>nom_categorie</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Categorie_1</UnderlyingIndexName>
+    </key>
+    <column id="28" parent="8" name="numero_cle">
+      <Position>1</Position>
+      <DataType>VARCHAR(25)|0</DataType>
+    </column>
+    <column id="29" parent="8" name="reference_jeu">
+      <Position>2</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <index id="30" parent="8" name="sqlite_autoindex_Cle_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>numero_cle</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="31" parent="8">
+      <ColNames>numero_cle</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Cle_1</UnderlyingIndexName>
+    </key>
+    <key id="32" parent="8">
+      <ColNames>numero_cle</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Cle_1</UnderlyingIndexName>
+    </key>
+    <column id="33" parent="9" name="id_client">
+      <Position>1</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="34" parent="9" name="nom_client">
+      <Position>2</Position>
+      <DataType>VARCHAR(30)|0</DataType>
+    </column>
+    <column id="35" parent="9" name="prenom_client">
+      <Position>3</Position>
+      <DataType>VARCHAR(30)|0</DataType>
+    </column>
+    <column id="36" parent="9" name="adresse">
+      <Position>4</Position>
+      <DataType>VARCHAR(100)|0</DataType>
+    </column>
+    <column id="37" parent="9" name="telephone">
+      <Position>5</Position>
+      <DataType>VARCHAR(14)|0</DataType>
+    </column>
+    <column id="38" parent="9" name="email">
+      <Position>6</Position>
+      <DataType>VARCHAR(40)|0</DataType>
+    </column>
+    <index id="39" parent="9" name="sqlite_autoindex_Client_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_client</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="40" parent="9">
+      <ColNames>id_client</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Client_1</UnderlyingIndexName>
+    </key>
+    <key id="41" parent="9">
+      <ColNames>id_client</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Client_1</UnderlyingIndexName>
+    </key>
+    <column id="42" parent="10" name="id_commande">
+      <Position>1</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="43" parent="10" name="date_achat">
+      <Position>2</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="44" parent="10" name="prix_total">
+      <Position>3</Position>
+      <DataType>REAL|0</DataType>
+    </column>
+    <column id="45" parent="10" name="quantite">
+      <Position>4</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="46" parent="10" name="id_client">
+      <Position>5</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <index id="47" parent="10" name="sqlite_autoindex_Commande_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_commande</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="48" parent="10">
+      <ColNames>id_commande</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Commande_1</UnderlyingIndexName>
+    </key>
+    <key id="49" parent="10">
+      <ColNames>id_commande</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Commande_1</UnderlyingIndexName>
+    </key>
+    <column id="50" parent="11" name="login">
+      <Position>1</Position>
+      <DataType>VARCHAR(40)|0</DataType>
+    </column>
+    <column id="51" parent="11" name="mot_de_passe">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|0</DataType>
+    </column>
+    <index id="52" parent="11" name="sqlite_autoindex_Compte_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>login</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="53" parent="11">
+      <ColNames>login</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Compte_1</UnderlyingIndexName>
+    </key>
+    <key id="54" parent="11">
+      <ColNames>login</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Compte_1</UnderlyingIndexName>
+    </key>
+    <column id="55" parent="12" name="reference_jeu">
+      <Position>1</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="56" parent="12" name="nom_categorie">
+      <Position>2</Position>
+      <DataType>VARCHAR(25)|0</DataType>
+    </column>
+    <key id="57" parent="12">
+      <ColNames>reference_jeu</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="58" parent="13" name="reference_jeu">
+      <Position>1</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="59" parent="13" name="id_commande">
+      <Position>2</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <key id="60" parent="13">
+      <ColNames>reference_jeu</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="61" parent="14" name="reference_jeu">
+      <Position>1</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="62" parent="14" name="nom_platforme">
+      <Position>2</Position>
+      <DataType>VARCHAR(25)|0</DataType>
+    </column>
+    <key id="63" parent="14">
+      <ColNames>reference_jeu</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="64" parent="15" name="reference_jeu">
+      <Position>1</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="65" parent="15" name="nom_produit">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|0</DataType>
+    </column>
+    <column id="66" parent="15" name="descriptif_court_jeu">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|0</DataType>
+    </column>
+    <column id="67" parent="15" name="descriptif_long_jeu">
+      <Position>4</Position>
+      <DataType>VARCHAR(50)|0</DataType>
+    </column>
+    <column id="68" parent="15" name="date_sortie">
+      <Position>5</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="69" parent="15" name="prix">
+      <Position>6</Position>
+      <DataType>REAL|0</DataType>
+    </column>
+    <column id="70" parent="15" name="note">
+      <Position>7</Position>
+      <DataType>REAL|0</DataType>
+    </column>
+    <column id="71" parent="15" name="url_site_officiel">
+      <Position>8</Position>
+      <DataType>VARCHAR(50)|0</DataType>
+    </column>
+    <column id="72" parent="15" name="url_image">
+      <Position>9</Position>
+      <DataType>VARCHAR(50)|0</DataType>
+    </column>
+    <column id="73" parent="15" name="editeur">
+      <Position>10</Position>
+      <DataType>VARCHAR(30)|0</DataType>
+    </column>
+    <index id="74" parent="15" name="sqlite_autoindex_Jeu_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>reference_jeu</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="75" parent="15">
+      <ColNames>reference_jeu</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Jeu_1</UnderlyingIndexName>
+    </key>
+    <key id="76" parent="15">
+      <ColNames>reference_jeu</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Jeu_1</UnderlyingIndexName>
+    </key>
+    <column id="77" parent="16" name="id_news">
+      <Position>1</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="78" parent="16" name="intitule">
+      <Position>2</Position>
+      <DataType>VARCHAR(25)|0</DataType>
+    </column>
+    <column id="79" parent="16" name="descriptif_news">
+      <Position>3</Position>
+      <DataType>VARCHAR(25)|0</DataType>
+    </column>
+    <index id="80" parent="16" name="sqlite_autoindex_News_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_news</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="81" parent="16">
+      <ColNames>id_news</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_News_1</UnderlyingIndexName>
+    </key>
+    <key id="82" parent="16">
+      <ColNames>id_news</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_News_1</UnderlyingIndexName>
+    </key>
+    <column id="83" parent="17" name="nom_platforme">
+      <Position>1</Position>
+      <DataType>VARCHAR(25)|0</DataType>
+    </column>
+    <index id="84" parent="17" name="sqlite_autoindex_Platforme_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>nom_platforme</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="85" parent="17">
+      <ColNames>nom_platforme</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Platforme_1</UnderlyingIndexName>
+    </key>
+    <key id="86" parent="17">
+      <ColNames>nom_platforme</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Platforme_1</UnderlyingIndexName>
+    </key>
+    <column id="87" parent="18" name="type">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="88" parent="18" name="name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="89" parent="18" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="90" parent="18" name="rootpage">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+    </column>
+    <column id="91" parent="18" name="sql">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+  </database-model>
+</dataSource>

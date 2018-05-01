@@ -1,0 +1,74 @@
+CREATE TABLE IF NOT EXISTS Compte(
+	login VARCHAR(40) PRIMARY KEY UNIQUE,
+	mot_de_passe VARCHAR(40)
+);
+
+CREATE TABLE IF NOT EXISTS Client(
+	id_client INTEGER  PRIMARY KEY UNIQUE,
+	nom_client VARCHAR(30),
+	prenom_client VARCHAR(30),
+	adresse	VARCHAR(100),
+	telephone VARCHAR(14),
+	email VARCHAR(40)
+)	INHERITS (Compte);
+
+CREATE TABLE IF NOT EXISTS Commande(
+	id_commande INTEGER PRIMARY KEY UNIQUE,
+	date_achat DATE,
+	prix_total REAL,
+	quantite INTEGER,
+	FOREIGN KEY (id_client)
+);
+
+CREATE TABLE IF NOT EXISTS Jeu(
+	reference_jeu INTEGER PRIMARY KEY UNIQUE,
+	nom_produit VARCHAR(40),
+	descriptif_court_jeu VARCHAR(50),
+	descriptif_long_jeu VARCHAR(50),
+	date_sortie DATE,
+	prix REAL,
+	note REAL,
+	url_site_officiel VARCHAR(50),
+	url_image VARCHAR(50),
+	editeur VARCHAR(30)
+);
+
+CREATE TABLE IF NOT EXISTS Categorie(
+	nom_categorie VARCHAR(25) PRIMARY KEY UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS Platforme(
+	nom_platforme VARCHAR(25) PRIMARY KEY UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS Cle(
+    numero_cle VARCHAR(25) PRIMARY KEY UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS News(
+	id_news INTEGER PRIMARY KEY UNIQUE,
+	intitule VARCHAR(25),
+	descriptif_news VARCHAR(25)
+);
+
+CREATE TABLE IF NOT EXISTS Administrateur(
+	id_admin INTEGER PRIMARY KEY UNIQUE,
+	last_ip VARCHAR(25)
+)INHERITS (Compte);
+
+CREATE TABLE IF NOT EXISTS Concerne_jeu_commande(
+	PRIMARY KEY(reference_jeu,id_commande)
+);
+
+CREATE TABLE IF NOT EXISTS Concerne_jeu_platforme(
+	PRIMARY KEY(reference_jeu,nom_platforme)
+);
+
+CREATE TABLE IF NOT EXISTS Concerne_jeu_categorie(
+	PRIMARY KEY(reference_jeu,nom_categorie)
+);
+
+CREATE TABLE IF NOT EXISTS Concerne_jeu_cle(
+	PRIMARY KEY(reference_jeu,numero_cle)
+);
+

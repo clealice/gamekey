@@ -1,4 +1,3 @@
-
 <article>
     <a href="#">
         <img src="https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633" alt="">
