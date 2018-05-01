@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS Compte(
-	login VARCHAR(40) PRIMARY KEY UNIQUE,
+	id_compte INTEGER PRIMARY KEY UNIQUE,
+	login VARCHAR(40),
 	mot_de_passe VARCHAR(40)
 );
 
@@ -17,15 +18,15 @@ CREATE TABLE IF NOT EXISTS Commande(
 	date_achat DATE,
 	prix_total REAL,
 	quantite INTEGER,
-	FOREIGN KEY (id_client)
+	FOREIGN KEY (id_client) REFERENCES Client
 );
 
 CREATE TABLE IF NOT EXISTS Jeu(
 	reference_jeu INTEGER PRIMARY KEY UNIQUE,
 	nom_produit VARCHAR(40),
-	descriptif_court_jeu VARCHAR(50),
-	descriptif_long_jeu VARCHAR(50),
-	date_sortie DATE,
+	descriptif_court_jeu VARCHAR(200),
+	descriptif_long_jeu VARCHAR(500),
+	date_sortie DATE,			
 	prix REAL,
 	note REAL,
 	url_site_officiel VARCHAR(50),
@@ -42,13 +43,13 @@ CREATE TABLE IF NOT EXISTS Platforme(
 );
 
 CREATE TABLE IF NOT EXISTS Cle(
-    numero_cle VARCHAR(25) PRIMARY KEY UNIQUE
+        numero_cle VARCHAR(25) PRIMARY KEY UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS News(
 	id_news INTEGER PRIMARY KEY UNIQUE,
 	intitule VARCHAR(25),
-	descriptif_news VARCHAR(25)
+	descriptif_news VARCHAR(25) 
 );
 
 CREATE TABLE IF NOT EXISTS Administrateur(
@@ -57,18 +58,26 @@ CREATE TABLE IF NOT EXISTS Administrateur(
 )INHERITS (Compte);
 
 CREATE TABLE IF NOT EXISTS Concerne_jeu_commande(
-	PRIMARY KEY(reference_jeu,id_commande)
+	PRIMARY KEY(reference_jeu,id_commande),
+	FOREIGN KEY(`reference_jeu`) REFERENCES jeu,
+	FOREIGN KEY(`id_commande`) REFERENCES commande
 );
 
 CREATE TABLE IF NOT EXISTS Concerne_jeu_platforme(
-	PRIMARY KEY(reference_jeu,nom_platforme)
+	PRIMARY KEY(reference_jeu,nom_platforme),
+	FOREIGN KEY(`reference_jeu`) REFERENCES jeu,
+	FOREIGN KEY(`nom_platforme`) REFERENCES platforme
 );
 
 CREATE TABLE IF NOT EXISTS Concerne_jeu_categorie(
-	PRIMARY KEY(reference_jeu,nom_categorie)
+	PRIMARY KEY(reference_jeu,nom_categorie),
+	FOREIGN KEY(`reference_jeu`) REFERENCES jeu,
+	FOREIGN KEY(`nom_categorie`) REFERENCES categorie
 );
 
 CREATE TABLE IF NOT EXISTS Concerne_jeu_cle(
-	PRIMARY KEY(reference_jeu,numero_cle)
+	PRIMARY KEY(reference_jeu,numero_cle),
+	FOREIGN KEY(`reference_jeu`) REFERENCES `jeu`,
+	FOREIGN KEY(`numero_cle`) REFERENCES `cle`
 );
 
